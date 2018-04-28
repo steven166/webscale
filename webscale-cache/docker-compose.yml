@@ -1,0 +1,44 @@
+version: '3'
+services:
+  watch:
+    build: .
+    image: ${PROJECT_NAME}
+    volumes:
+      - ./src:/app/src:ro
+      - ./dist:/app/dist
+  watchTest:
+    build: .
+    image: ${PROJECT_NAME}
+    command:
+    - yarn
+    - run
+    - watchTest
+    volumes:
+      - ./dist:/app/dist:ro
+    ports:
+      - 9101:9100
+    depends_on: 
+    - watch
+  debugTest:
+    build: .
+    image: ${PROJECT_NAME}
+    command:
+    - yarn
+    - run
+    - debugTest
+    volumes:
+      - ./src:/app/src:ro
+      - ./dist:/app/dist
+    ports:
+      - 9100:9100
+  mutationTest:
+    build: .
+    image: ${PROJECT_NAME}
+    command:
+    - yarn
+    - run
+    - mutationTest
+    volumes:
+      - ./dist:/app/dist:ro
+      - ./stryker.conf.js:/app/stryker.conf.js:ro
+      - ./reports:/app/reports
