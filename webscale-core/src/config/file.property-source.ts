@@ -1,19 +1,19 @@
 import { PropertySource } from "./property-source";
 
 /**
- * Property source from a JSON file
+ * Property source from a file
  */
-export class JsonPropertySource extends PropertySource {
+export class FilePropertySource extends PropertySource {
 
   constructor(private file: string) {
     super();
   }
 
   /**
-   * Load json file
+   * Load and parse file
    * @returns {Promise<void>}
    */
-  public load(): Promise<any> {
+  public load(): Promise<PropertySource> {
     return import("fs").then(fs => {
       return new Promise<PropertySource>((resolve, reject) => {
         fs.readFile(this.file, (err, data) => {
@@ -21,8 +21,7 @@ export class JsonPropertySource extends PropertySource {
             resolve(this);
           } else {
             try {
-              let source = JSON.parse(data.toString());
-              resolve(source);
+              resolve(PropertySource.from(data.toString()));
             } catch (e) {
               reject(e);
             }
