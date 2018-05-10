@@ -1,13 +1,16 @@
-import { LogLevel } from "./log-level";
-import { LogHandler } from "./handlers/log-handler";
-import { ConsoleLogHandler } from "./handlers/console.log-handler";
+import {LogLevel} from "./log-level";
+import {LogHandler} from "./handlers/log-handler";
+import {ConsoleLogHandler} from "./handlers/console.log-handler";
+import {LoggerProperties} from "./logger.properties";
+import {LoggerOptions} from "./logger.options";
+import {ConfigurableLogHandler} from "./handlers";
 
 const DEFAULT_LOGGER_NAMESPACE = "default";
 
-const LogLevelValues: {[level:string]: number} = {
-  "verbose": 1,
-  "silly": 2,
-  "debug": 3,
+const LogLevelValues: { [level: string]: number } = {
+  "silly": 1,
+  "debug": 2,
+  "verbose": 3,
   "info": 4,
   "warn": 5,
   "error": 6,
@@ -24,6 +27,23 @@ export class Logger {
    * @type {{}}
    */
   private static loggers: { [namespace: string]: Logger } = {};
+
+  /**
+   * Registered log handlers
+   * @type {ConsoleLogHandler[]}
+   */
+  private static registeredHandlers: LogHandler[] = [new ConsoleLogHandler()];
+
+  /**
+   * Used log handlers
+   * @type {any[]}
+   */
+  private static logHandlers: LogHandler[] = [new ConsoleLogHandler()];
+
+  /**
+   * Default configured properties
+   */
+  private static defaultProperties: LoggerOptions;
 
   /**
    * Global log level
@@ -43,6 +63,52 @@ export class Logger {
       Logger.loggers[namespace] = logger;
     }
     return logger;
+  }
+
+  /**
+   * Configure loggers
+   * @param {LoggerProperties} options
+   */
+  public static configure(options: LoggerProperties): void {
+    Logger.defaultProperties = options;
+    if (options.level) {
+      Logger.level = options.level;
+    }
+    if (options.handlers) {
+      options.handlers = [];
+      options.handlers.forEach(h => Logger.useHandler(h, options));
+    }
+    if (options.namespaces) {
+      for (let namespace in options.namespaces) {
+        Logger.create(namespace).configure(options.namespaces[namespace]);
+      }
+    }
+  }
+
+  /**
+   * Register a log handler
+   * @param {LogHandler} logHandler
+   */
+  public static registerHandler(logHandler: LogHandler): void {
+    Logger.registeredHandlers.push(logHandler);
+  }
+
+  /**
+   * Use a log handler
+   * @param {LogHandler | string} logHandler
+   * @param options
+   */
+  public static useHandler(logHandler: LogHandler | string, options?: LoggerOptions): void {
+    if (typeof(logHandler) === "string") {
+      logHandler = Logger.registeredHandlers.find(h => h.name === logHandler);
+    }
+    if (!logHandler) {
+      throw new Error(`Unknown log handler '${logHandler}'`);
+    }
+    if (options && (logHandler as ConfigurableLogHandler).configure) {
+      (logHandler as ConfigurableLogHandler).configure(options);
+    }
+    Logger.logHandlers.push(logHandler);
   }
 
   /**
@@ -110,21 +176,50 @@ export class Logger {
   }
 
   /**
-   * Log handler
-   * @type {ConsoleLogHandler}
-   */
-  private handler: LogHandler = new ConsoleLogHandler();
-
-  /**
    * Log level
    */
   private _level: LogLevel;
+
+  /**
+   * Used log handlers
+   * @type {LogHandler[]}
+   */
+  private _handlers: LogHandler[] = [];
 
   /**
    * Create a new logger for a namespace
    * @param {string} namespace
    */
   constructor(public readonly namespace: string) {
+  }
+
+  public configure(options: LoggerOptions): void {
+    if (options.level) {
+      this.level = options.level;
+    }
+    if (options.handlers) {
+      options.handlers.forEach(handler => {
+        this.useHandler(handler, options);
+      });
+    }
+  }
+
+  /**
+   * Use a log handler
+   * @param {LogHandler | string} logHandler
+   * @param options
+   */
+  public useHandler(logHandler: LogHandler | string, options?: LoggerOptions): void {
+    if (typeof(logHandler) === "string") {
+      logHandler = Logger.registeredHandlers.find(h => h.name === logHandler);
+    }
+    if (!logHandler) {
+      throw new Error(`Unknown log handler '${logHandler}'`);
+    }
+    if ((logHandler as ConfigurableLogHandler).configure) {
+      (logHandler as ConfigurableLogHandler).configure(options, this);
+    }
+    this._handlers.push(logHandler);
   }
 
   /**
@@ -143,15 +238,17 @@ export class Logger {
     return this._level || Logger.level;
   }
 
+  public get handlers(): LogHandler[] {
+    return Logger.logHandlers.concat(this._handlers);
+  }
+
   /**
    * Log a silly message
    * @param message
    * @param optionalParams
    */
   public silly(message?: any, ...optionalParams: any[]) {
-    if (this.shouldLog(LogLevel.SILLY)) {
-      this.handler.silly(this, message, ...optionalParams);
-    }
+    this.log(LogLevel.SILLY, message, ...optionalParams);
   }
 
   /**
@@ -160,9 +257,7 @@ export class Logger {
    * @param optionalParams
    */
   public verbose(message?: any, ...optionalParams: any[]) {
-    if (this.shouldLog(LogLevel.VERBOSE)) {
-      this.handler.verbose(this, message, ...optionalParams);
-    }
+    this.log(LogLevel.VERBOSE, message, ...optionalParams);
   }
 
   /**
@@ -172,27 +267,29 @@ export class Logger {
    * @param optionalParams
    */
   public log(level: LogLevel, message?: any, ...optionalParams: any[]) {
-    switch (level) {
-      case LogLevel.VERBOSE:
-        this.verbose(message, ...optionalParams);
-        break;
-      case LogLevel.SILLY:
-        this.silly(message, ...optionalParams);
-        break;
-      case LogLevel.DEBUG:
-        this.debug(message, ...optionalParams);
-        break;
-      case LogLevel.INFO:
-        this.info(message, ...optionalParams);
-        break;
-      case LogLevel.WARN:
-        this.warn(message, ...optionalParams);
-        break;
-      case LogLevel.ERROR:
-        this.error(message, ...optionalParams);
-        break;
-      default:
-        throw new Error(`Unknown loglevel '${level}'`);
+    if (this.shouldLog(level)) {
+      switch (level) {
+        case LogLevel.VERBOSE:
+          this.handlers.forEach(h => h.verbose(this, message, ...optionalParams));
+          break;
+        case LogLevel.SILLY:
+          this.handlers.forEach(h => h.silly(this, message, ...optionalParams));
+          break;
+        case LogLevel.DEBUG:
+          this.handlers.forEach(h => h.debug(this, message, ...optionalParams));
+          break;
+        case LogLevel.INFO:
+          this.handlers.forEach(h => h.info(this, message, ...optionalParams));
+          break;
+        case LogLevel.WARN:
+          this.handlers.forEach(h => h.warn(this, message, ...optionalParams));
+          break;
+        case LogLevel.ERROR:
+          this.handlers.forEach(h => h.error(this, message, ...optionalParams));
+          break;
+        default:
+          throw new Error(`Unknown loglevel '${level}'`);
+      }
     }
   }
 
@@ -202,9 +299,7 @@ export class Logger {
    * @param optionalParams
    */
   public debug(message?: any, ...optionalParams: any[]) {
-    if (this.shouldLog(LogLevel.DEBUG)) {
-      this.handler.debug(this, message, ...optionalParams);
-    }
+    this.log(LogLevel.DEBUG, message, ...optionalParams);
   }
 
   /**
@@ -213,9 +308,7 @@ export class Logger {
    * @param optionalParams
    */
   public info(message?: any, ...optionalParams: any[]) {
-    if (this.shouldLog(LogLevel.INFO)) {
-      this.handler.info(this, message, ...optionalParams);
-    }
+    this.log(LogLevel.INFO, message, ...optionalParams);
   }
 
   /**
@@ -224,9 +317,7 @@ export class Logger {
    * @param optionalParams
    */
   public warn(message?: any, ...optionalParams: any[]) {
-    if (this.shouldLog(LogLevel.WARN)) {
-      this.handler.warn(this, message, ...optionalParams);
-    }
+    this.log(LogLevel.WARN, message, ...optionalParams);
   }
 
   /**
@@ -235,9 +326,7 @@ export class Logger {
    * @param optionalParams
    */
   public error(message?: any, ...optionalParams: any[]) {
-    if (this.shouldLog(LogLevel.ERROR)) {
-      this.handler.error(this, message, ...optionalParams);
-    }
+    this.log(LogLevel.ERROR, message, ...optionalParams);
   }
 
   /**

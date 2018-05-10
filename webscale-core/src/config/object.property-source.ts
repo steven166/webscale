@@ -16,4 +16,5 @@ export class ObjectPropertySource extends PropertySource {
   public load(): Promise<PropertySource> {
     return Promise.resolve(this.source);
   }
+
 }

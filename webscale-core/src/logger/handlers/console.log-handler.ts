@@ -6,6 +6,8 @@ import { Logger } from "../logger";
  */
 export class ConsoleLogHandler implements LogHandler {
 
+  public readonly name = "console";
+
   public verbose(logger: Logger, message?: any, ...optionalParams: any[]) {
     // tslint:disable-next-line
     console.info(`[verb] [${logger.namespace}]`, message, ...optionalParams);

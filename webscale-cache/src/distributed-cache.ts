@@ -1,5 +1,4 @@
-import { ServerList } from "../rest-client/server-discovery/server-list";
-import { DynamicServerList } from "../rest-client/server-discovery/dynamic.server-list";
+import { DynamicServerList, ServerList } from "@webscale/server-discovery";
 import { Peer } from "./peer";
 import { LocalCache } from "./local-cache";
 import { Cache } from "./cache";

@@ -3,6 +3,8 @@ import { LoggerOptions } from "../logger.options";
 
 export interface LogHandler {
 
+  readonly name: string;
+
   verbose(logger: Logger, message?: any, ...optionalParams: any[]);
 
   silly(logger: Logger, message?: any, ...optionalParams: any[]);
@@ -15,6 +17,10 @@ export interface LogHandler {
 
   error(logger: Logger, message?: any, ...optionalParams: any[]);
 
-  configure(logger: Logger, loggerOptions: LoggerOptions): void;
+}
+
+export interface ConfigurableLogHandler extends LogHandler {
+
+  configure(loggerOptions: LoggerOptions, logger?: Logger): void;
 
 }

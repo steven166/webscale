@@ -9,7 +9,7 @@ declare module "../config/properties" {
 
 export interface LoggerProperties extends LoggerOptions {
 
-  readonly namespaces: {[namespace: string]: LoggerOptions};
+  readonly namespaces?: {[namespace: string]: LoggerOptions};
 
 }
 

@@ -1,5 +1,5 @@
-import { PropertySource } from "./property-source";
-import { ObjectUtils } from "../utils/object.utils";
+import {PropertySource} from "./property-source";
+import {ObjectUtils} from "../utils/object.utils";
 
 export class Config extends PropertySource {
 
@@ -48,13 +48,15 @@ export class Config extends PropertySource {
    * @returns {Promise<void>}
    */
   public async load(): Promise<Config> {
-    if(this.source){
+    if (this.source) {
       throw new Error(`Config already loaded`);
     }
     let combinedSources = {};
     for (let propertySource of this.propertySources) {
       if (typeof(propertySource) === "function") {
         propertySource = propertySource(this);
+      } else if (!(propertySource instanceof PropertySource)) {
+        propertySource = PropertySource.from(propertySource);
       }
       let source = await propertySource.load();
       ObjectUtils.deepMerge(combinedSources, source);

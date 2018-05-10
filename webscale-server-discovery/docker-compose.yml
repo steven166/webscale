@@ -1,44 +1,64 @@
 version: '3'
 services:
   watch:
-    build: .
+    build:
+      context: ../
+      dockerfile: webscale-server-discovery/Dockerfile
+      args:
+        - NAME=webscale-server-discovery
     image: webscale-server-discovery
     volumes:
-      - ./src:/app/src:ro
-      - ./dist:/app/dist
+      - ../webscale-core/dist:/app/webscale-core:ro
+      - ./src:/app/webscale-server-discovery/src:ro
+      - ./dist:/app/webscale-server-discovery/dist
   watchTest:
-    build: .
+    build:
+      context: ../
+      dockerfile: webscale-server-discovery/Dockerfile
+      args:
+        - NAME=webscale-server-discovery
     image: webscale-server-discovery
     command:
     - yarn
     - run
     - watchTest
     volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
       - ./dist:/app/dist:ro
     ports:
       - 9101:9100
     depends_on: 
     - watch
   debugTest:
-    build: .
+    build:
+      context: ../
+      dockerfile: webscale-server-discovery/Dockerfile
+      args:
+        - NAME=webscale-server-discovery
     image: webscale-server-discovery
     command:
     - yarn
     - run
     - debugTest
     volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
       - ./src:/app/src:ro
       - ./dist:/app/dist
     ports:
       - 9100:9100
   mutationTest:
-    build: .
+    build:
+      context: ../
+      dockerfile: webscale-server-discovery/Dockerfile
+      args:
+        - NAME=webscale-server-discovery
     image: webscale-server-discovery
     command:
     - yarn
     - run
     - mutationTest
     volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
       - ./dist:/app/dist:ro
       - ./stryker.conf.js:/app/stryker.conf.js:ro
       - ./reports:/app/reports

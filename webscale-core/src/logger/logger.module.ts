@@ -1,28 +1,21 @@
-import { App, Module } from "../module";
-import { Logger } from "./logger";
-import { LogHandler } from "./handlers";
+import {App, Module} from "../module";
+import {Logger} from "./logger";
+import {LoggerProperties} from "./logger.properties";
 
 export class LoggerModule implements Module {
 
   public readonly name = "logger";
 
-  constructor(private readonly options?: LoggerModuleOptions) {
+  constructor(private properties?: LoggerProperties) {
 
   }
 
   public async load(app: App): Promise<void> {
-    if (this.options) {
-      if (this.options.handler) {
-        Logger.
-      }
-    }
-    if (app.config) {
+    if (this.properties) {
+      Logger.configure(this.properties);
+    } else if (app.config) {
       Logger.configure(app.config.webscale.logger);
     }
   }
 
-}
-
-export interface LoggerModuleOptions {
-  handler?: LogHandler;
 }

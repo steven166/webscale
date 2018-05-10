@@ -1,44 +1,68 @@
 version: '3'
 services:
   watch:
-    build: .
-    image: ${PROJECT_NAME}
+    build:
+      context: ../
+      dockerfile: webscale-cache/Dockerfile
+      args:
+        - NAME=webscale-cache
+    image: webscale-cache
     volumes:
-      - ./src:/app/src:ro
-      - ./dist:/app/dist
+      - ../webscale-core/dist:/app/webscale-core:ro
+      - ../webscale-server-discovery/dist:/app/webscale--server-discovery:ro
+      - ./src:/app/webscale-cache/src:ro
+      - ./dist:/app/webscale-cache/dist
   watchTest:
-    build: .
-    image: ${PROJECT_NAME}
+    build:
+      context: ../
+      dockerfile: webscale-cache/Dockerfile
+      args:
+        - NAME=webscale-cache
+    image: webscale-cache
     command:
     - yarn
     - run
     - watchTest
     volumes:
+      - ../webscale-server-discovery/dist:/app/webscale--server-discovery:ro
+      - ../webscale-core/dist:/app/webscale-core:ro
       - ./dist:/app/dist:ro
     ports:
       - 9101:9100
-    depends_on: 
+    depends_on:
     - watch
   debugTest:
-    build: .
-    image: ${PROJECT_NAME}
+    build:
+      context: ../
+      dockerfile: webscale-cache/Dockerfile
+      args:
+        - NAME=webscale-cache
+    image: webscale-cache
     command:
     - yarn
     - run
     - debugTest
     volumes:
+      - ../webscale-server-discovery/dist:/app/webscale--server-discovery:ro
+      - ../webscale-core/dist:/app/webscale-core:ro
       - ./src:/app/src:ro
       - ./dist:/app/dist
     ports:
       - 9100:9100
   mutationTest:
-    build: .
-    image: ${PROJECT_NAME}
+    build:
+      context: ../
+      dockerfile: webscale-cache/Dockerfile
+      args:
+        - NAME=webscale-cache
+    image: webscale-cache
     command:
     - yarn
     - run
     - mutationTest
     volumes:
+      - ../webscale-server-discovery/dist:/app/webscale--server-discovery:ro
+      - ../webscale-core/dist:/app/webscale-core:ro
       - ./dist:/app/dist:ro
       - ./stryker.conf.js:/app/stryker.conf.js:ro
       - ./reports:/app/reports
