@@ -1,0 +1,64 @@
+version: '3'
+services:
+  watch:
+    build:
+      context: ../
+      dockerfile: webscale-collection-redis/Dockerfile
+      args:
+        - NAME=webscale-collection-redis
+    image: webscale-collection-redis
+    volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
+      - ./src:/app/webscale-collection-redis/src:ro
+      - ./dist:/app/webscale-collection-redis/dist
+  watchTest:
+    build:
+      context: ../
+      dockerfile: webscale-collection-redis/Dockerfile
+      args:
+        - NAME=webscale-collection-redis
+    image: webscale-collection-redis
+    command:
+    - yarn
+    - run
+    - watchTest
+    volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
+      - ./dist:/app/dist:ro
+    ports:
+      - 9101:9100
+    depends_on:
+    - watch
+  debugTest:
+    build:
+      context: ../
+      dockerfile: webscale-collection-redis/Dockerfile
+      args:
+        - NAME=webscale-collection-redis
+    image: webscale-collection-redis
+    command:
+    - yarn
+    - run
+    - debugTest
+    volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
+      - ./src:/app/src:ro
+      - ./dist:/app/dist
+    ports:
+      - 9100:9100
+  mutationTest:
+    build:
+      context: ../
+      dockerfile: webscale-collection-redis/Dockerfile
+      args:
+        - NAME=webscale-collection-redis
+    image: webscale-collection-redis
+    command:
+    - yarn
+    - run
+    - mutationTest
+    volumes:
+      - ../webscale-core/dist:/app/webscale-core:ro
+      - ./dist:/app/dist:ro
+      - ./stryker.conf.js:/app/stryker.conf.js:ro
+      - ./reports:/app/reports
