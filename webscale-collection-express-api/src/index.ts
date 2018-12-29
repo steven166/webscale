@@ -1,17 +1,29 @@
-import { CollectionFactory, CollectionOptions } from "@webscale/collection";
-import { createExpressRoutes } from "./factory";
+import { CollectionFactory, CollectionOptions, defaultFactory } from "@webscale/collection";
+import { Application } from "express";
+import { createExpressRoutes, createExpressSwaggerRoute } from "./factory";
 
 export * from "./factory";
 
 /**
  * Create collections with endpoints
- * @param expressApp
+ * @param collections
  * @param options
  */
-export function apiServer(options: { [name: string]: CollectionOptions }, expressApp: any): CollectionFactory {
-  for (let collectionName in options) {
-    this.collection(collectionName, options[collectionName]);
+export function apiServer(collections: { [name: string]: CollectionOptions },
+                          options: ApiServerOptions): CollectionFactory {
+  let factory = options.collectionFactory || defaultFactory();
+  for (let collectionName in collections) {
+    factory.collection(collectionName, collections[collectionName]);
   }
-  createExpressRoutes(expressApp, this);
+  createExpressRoutes(options.express, this);
+  if (options && options.apiDocs) {
+    createExpressSwaggerRoute(options.express, factory);
+  }
   return this;
+}
+
+export interface ApiServerOptions {
+  express: Application;
+  apiDocs?: boolean;
+  collectionFactory?: CollectionFactory;
 }
