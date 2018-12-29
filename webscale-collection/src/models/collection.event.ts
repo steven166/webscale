@@ -2,12 +2,12 @@ import { Ids } from "./ids";
 
 export class CollectionEvent<T> {
 
-  type: CollectionEventType;
-  collection: string;
-  name: string;
-  ids: Ids;
-  before: T;
-  after: T;
+  public type: CollectionEventType;
+  public collection: string;
+  public name: string;
+  public ids: Ids;
+  public before: T;
+  public after: T;
 
 }
 

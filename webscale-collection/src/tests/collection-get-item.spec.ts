@@ -1,8 +1,8 @@
-import { CollectionEventType, CollectionFactory } from "../index";
-import { InMemoryConnection } from "../datasource";
-import { assert } from "chai";
 import { Logger } from "@webscale/core";
+import { assert } from "chai";
+import { InMemoryConnection } from "../datasource";
 import { SimpleDatasource } from "../datasource/simple.datasource";
+import { CollectionFactory } from "../index";
 
 const logger = Logger.create("@webscale/collection/test");
 

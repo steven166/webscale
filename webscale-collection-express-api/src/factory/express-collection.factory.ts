@@ -1,13 +1,11 @@
-import { CollectionFactory } from "../factory";
-import { Application, Response, NextFunction } from "express";
-import { Collection } from "../collection";
-import { Observable } from "rxjs/index";
+import { Collection, CollectionFactory, defaultFactory } from "@webscale/collection";
 import { Logger, MethodNotAllowedError } from "@webscale/core";
+import { Application, NextFunction, Response } from "express";
 import * as fs from "fs";
 import * as pathUtil from "path";
-import { defaultFactory } from "../index";
+import { Observable } from "rxjs";
 
-const logger = Logger.create("@webscale/collection");
+const logger = Logger.create("@webscale/collection-express-api");
 
 /**
  * Generate collection routes for express
@@ -85,9 +83,11 @@ export function createExpressRoutes(express: Application, collectionFactory: Col
 
 /**
  * Create swagger docs route
+ * @param express
  * @param {CollectionFactory} collectionFactory
  */
-export function createExpressSwaggerRoute(express: Application, collectionFactory: CollectionFactory = defaultFactory()) {
+export function createExpressSwaggerRoute(express: Application,
+                                          collectionFactory: CollectionFactory = defaultFactory()) {
   let packageJson = findPackageJson();
 
   let docs: any = {};
@@ -339,7 +339,6 @@ function getFieldPath(collection: Collection<any>, pattern: "express" | "swagger
 function observableToJsonResponse(observable: Observable<any>, response: Response, next: NextFunction): void {
   let sendHeader = false;
   observable.subscribe(item => {
-    console.info("write");
     if (!sendHeader) {
       response.set("content-type", "application/json").status(200);
       sendHeader = true;
@@ -349,7 +348,6 @@ function observableToJsonResponse(observable: Observable<any>, response: Respons
   }, e => {
     next(e);
   }, () => {
-    console.info("finish");
     if (!sendHeader) {
       response.set("content-type", "application/json").status(200);
       sendHeader = true;

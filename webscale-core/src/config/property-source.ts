@@ -1,14 +1,6 @@
-import {ObjectPropertySource} from "./object.property-source";
 import * as yaml from "yamljs";
-import {FilePropertySource} from "./file.property-source";
 
 export abstract class PropertySource {
-
-  /**
-   * Load source as object
-   * @returns {Promise<void>}
-   */
-  public abstract load(): Promise<any>;
 
   /**
    * Create property source from an object or parse from a string
@@ -60,5 +52,11 @@ export abstract class PropertySource {
     return null;
     // return new FilePropertySource(file);
   }
+
+  /**
+   * Load source as object
+   * @returns {Promise<void>}
+   */
+  public abstract load(): Promise<any>;
 
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@webscale/collection",
+  "name": "@webscale/collection-express-api",
   "version": "0.1.0",
-  "description": "Domain Driven Design Framework",
+  "description": "ExpressJS REST API for @webscale/collection framework",
   "main": "index.js",
   "author": "S. Hermans <s.hermans@maxxton.com>",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "rm -rf dist/* && (mkdir dist || true) && npm run _copy.resources && npm run _copy.schemas && ./node_modules/.bin/tsc -p tsconfig.build.json",
-    "setup": "npm install && npm link @webscale/core",
+    "setup": "npm install && npm link @webscale/core && npm link @webscale/collection",
     "link": "cd dist && npm link",
     "lint": "./node_modules/.bin/tslint -e **/node_modules/** -e **/dist/** --project tsconfig.json",
     "watch": "rm -rf dist/* && (mkdir dist || true) && npm run _copy.resources && npm run _copy.schemas && npm run link && ./node_modules/.bin/tsc -p tsconfig.json -w",
@@ -47,8 +47,8 @@
     "typescript": "^2.7.2"
   },
   "dependencies": {
-    "@webscale/core": "^0.1.0",
-    "ajv": "^6.5.4",
-    "rxjs": "^6.1.0"
+    "@webscale/core": "0.1.0",
+    "@webscale/collection": "0.1.0",
+    "express": "^4.16.3"
   }
 }

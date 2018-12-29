@@ -12,4 +12,3 @@ export interface LoggerProperties extends LoggerOptions {
   readonly namespaces?: {[namespace: string]: LoggerOptions};
 
 }
-

@@ -1,49 +1,27 @@
-import {LogLevel} from "./log-level";
-import {LogHandler} from "./handlers/log-handler";
-import {ConsoleLogHandler} from "./handlers/console.log-handler";
-import {LoggerProperties} from "./logger.properties";
-import {LoggerOptions} from "./logger.options";
-import {ConfigurableLogHandler} from "./handlers";
+import { ConfigurableLogHandler } from "./handlers";
+import { ConsoleLogHandler } from "./handlers/console.log-handler";
+import { LogHandler } from "./handlers/log-handler";
+import { LogLevel } from "./log-level";
+import { LoggerOptions } from "./logger.options";
+import { LoggerProperties } from "./logger.properties";
 
 const DEFAULT_LOGGER_NAMESPACE = "default";
 
+// tslint:disable-next-line
 const LogLevelValues: { [level: string]: number } = {
-  "silly": 1,
-  "debug": 2,
-  "verbose": 3,
-  "info": 4,
-  "warn": 5,
-  "error": 6,
-  "off": 7
+  silly: 1,
+  debug: 2,
+  verbose: 3,
+  info: 4,
+  warn: 5,
+  error: 6,
+  off: 7
 };
 
 /**
  * Logger
  */
 export class Logger {
-
-  /**
-   * List of created loggers
-   * @type {{}}
-   */
-  private static loggers: { [namespace: string]: Logger } = {};
-
-  /**
-   * Registered log handlers
-   * @type {ConsoleLogHandler[]}
-   */
-  private static registeredHandlers: LogHandler[] = [new ConsoleLogHandler()];
-
-  /**
-   * Used log handlers
-   * @type {any[]}
-   */
-  private static logHandlers: LogHandler[] = [new ConsoleLogHandler()];
-
-  /**
-   * Default configured properties
-   */
-  private static defaultProperties: LoggerOptions;
 
   /**
    * Global log level
@@ -174,6 +152,29 @@ export class Logger {
   public static error(message?: any, ...optionalParams: any[]) {
     Logger.create().error(message, ...optionalParams);
   }
+
+  /**
+   * List of created loggers
+   * @type {{}}
+   */
+  private static loggers: { [namespace: string]: Logger } = {};
+
+  /**
+   * Registered log handlers
+   * @type {ConsoleLogHandler[]}
+   */
+  private static registeredHandlers: LogHandler[] = [new ConsoleLogHandler()];
+
+  /**
+   * Used log handlers
+   * @type {any[]}
+   */
+  private static logHandlers: LogHandler[] = [new ConsoleLogHandler()];
+
+  /**
+   * Default configured properties
+   */
+  private static defaultProperties: LoggerOptions;
 
   /**
    * Log level

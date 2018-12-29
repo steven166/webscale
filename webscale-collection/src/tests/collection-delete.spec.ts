@@ -1,8 +1,8 @@
-import { CollectionEventType, CollectionFactory } from "../index";
-import { InMemoryConnection } from "../datasource";
-import { assert } from "chai";
 import { Logger } from "@webscale/core";
+import { assert } from "chai";
+import { InMemoryConnection } from "../datasource";
 import { SimpleDatasource } from "../datasource/simple.datasource";
+import { CollectionEventType, CollectionFactory } from "../index";
 
 const logger = Logger.create("@webscale/collection/test");
 
@@ -49,7 +49,7 @@ describe("@webscale/collection", () => {
           singularName: "project"
         });
 
-        await connection.save(projects,{
+        await connection.save(projects, {
           projectId: "my-project",
           owner: "Stevo"
         });
@@ -93,12 +93,12 @@ describe("@webscale/collection", () => {
               });
               resolve();
             } catch (e) {
-              reject(e)
+              reject(e);
             }
           });
 
           projects.deleteItem({ query: { projectId: "my-project" } }).then(deleted => {
-            if(!deleted){
+            if (!deleted) {
               throw new Error("Failed to delete 'my-project'");
             }
           }).catch(e => {

@@ -1,18 +1,16 @@
 export const BOOT_TIME = Date.now();
 
-import {Config, PropertySource} from "../config";
-import {Module} from "./module";
-import {LoggerModule} from "../logger/logger.module";
-import {ConfigModule} from "../config/config.module";
-import {Logger, LogLevel} from "../logger";
+import { Config } from "../config";
+import { Logger } from "../logger";
+import { Module } from "./module";
 
 const logger = Logger.create("@winston/app");
 
 export class App {
 
-  private modules: Module[] = [];
   public config: Config;
-  public attributes: {[name: string]: any};
+  public attributes: { [name: string]: any };
+  private modules: Module[] = [];
 
   public load(module: Module): App {
     this.modules.push(module);
@@ -33,4 +31,3 @@ export class App {
   }
 
 }
-

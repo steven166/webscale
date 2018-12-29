@@ -1,8 +1,8 @@
-import { Connection } from "./connection";
-import { Collection } from "../collection";
-import { Filter, Ids } from "../models";
 import { BadRequestError, Logger } from "@webscale/core";
 import { Observable } from "rxjs";
+import { Collection } from "../collection";
+import { Filter, Ids } from "../models";
+import { Connection } from "./connection";
 
 const logger = Logger.create("@webscale/datasource");
 
@@ -10,14 +10,6 @@ const logger = Logger.create("@webscale/datasource");
  * Connection to store data with a key-value structure
  */
 export abstract class KeyValueConnection<T> extends Connection<T> {
-
-  protected abstract saveForPath(collection: Collection<T>, pathSegments: string[], item: T): Promise<T>;
-
-  protected abstract getForPath(collection: Collection<T>, pathSegments: string[]): Promise<T | undefined>;
-
-  protected abstract deleteForPath(collection: Collection<T>, pathSegments: string[]): Promise<boolean>;
-
-  protected abstract getKeys(collection: Collection<T>, pathSegments: string[]): Promise<string[] | undefined>;
 
   public save(collection: Collection<T>, item: T): Promise<T> {
     let pathSegments = this.getItemPath(collection, item);
@@ -100,5 +92,13 @@ export abstract class KeyValueConnection<T> extends Connection<T> {
     }
     return segments.map(segment => encodeURIComponent(segment));
   }
+
+  protected abstract saveForPath(collection: Collection<T>, pathSegments: string[], item: T): Promise<T>;
+
+  protected abstract getForPath(collection: Collection<T>, pathSegments: string[]): Promise<T | undefined>;
+
+  protected abstract deleteForPath(collection: Collection<T>, pathSegments: string[]): Promise<boolean>;
+
+  protected abstract getKeys(collection: Collection<T>, pathSegments: string[]): Promise<string[] | undefined>;
 
 }

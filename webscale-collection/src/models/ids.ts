@@ -1,1 +1,3 @@
-export type Ids = { [field: string]: string };
+export interface Ids {
+  [field: string]: string;
+}

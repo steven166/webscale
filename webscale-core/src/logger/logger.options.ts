@@ -1,5 +1,5 @@
-import {LogLevel} from "./log-level";
-import {LogHandler} from "./handlers";
+import { LogHandler } from "./handlers";
+import { LogLevel } from "./log-level";
 
 export interface LoggerOptions {
 

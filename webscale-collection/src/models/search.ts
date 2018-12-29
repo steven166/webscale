@@ -5,4 +5,6 @@ export interface Search {
 
 }
 
-export type Filter = { [key: string]: any };
+export interface Filter {
+  [key: string]: any;
+}

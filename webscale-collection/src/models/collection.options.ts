@@ -1,5 +1,5 @@
-import { Collection } from "../collection";
 import { JSONSchema7 } from "json-schema";
+import { Collection } from "../collection";
 import { Datasource } from "../datasource";
 
 /**

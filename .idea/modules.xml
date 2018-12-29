@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/webscale.iml" filepath="$PROJECT_DIR$/webscale.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-cache/webscale-cache.iml" filepath="$PROJECT_DIR$/webscale-cache/webscale-cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-collection/webscale-collection.iml" filepath="$PROJECT_DIR$/webscale-collection/webscale-collection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webscale-collection-express-api/webscale-collection-express-api.iml" filepath="$PROJECT_DIR$/webscale-collection-express-api/webscale-collection-express-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-core/webscale-core.iml" filepath="$PROJECT_DIR$/webscale-core/webscale-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-queue/webscale-queue.iml" filepath="$PROJECT_DIR$/webscale-queue/webscale-queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-server-discovery/webscale-server-discovery.iml" filepath="$PROJECT_DIR$/webscale-server-discovery/webscale-server-discovery.iml" />

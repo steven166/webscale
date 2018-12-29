@@ -1,8 +1,8 @@
-import { collection, CollectionEventType, CollectionFactory } from "../index";
-import { InMemoryConnection } from "../datasource";
-import { assert } from "chai";
 import { Logger } from "@webscale/core";
+import { assert } from "chai";
+import { InMemoryConnection } from "../datasource";
 import { SimpleDatasource } from "../datasource/simple.datasource";
+import { CollectionEventType, CollectionFactory } from "../index";
 
 const logger = Logger.create("@webscale/collection/test");
 
@@ -312,7 +312,7 @@ describe("@webscale/collection", () => {
               });
               resolve();
             } catch (e) {
-              reject(e)
+              reject(e);
             }
           });
 
@@ -357,7 +357,7 @@ describe("@webscale/collection", () => {
               });
               resolve();
             } catch (e) {
-              reject(e)
+              reject(e);
             }
           });
 

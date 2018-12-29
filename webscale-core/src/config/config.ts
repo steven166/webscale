@@ -1,9 +1,7 @@
-import { PropertySource } from "./property-source";
 import { ObjectUtils } from "../utils/object.utils";
+import { PropertySource } from "./property-source";
 
 export class Config extends PropertySource {
-
-  private static instance: Config;
 
   public static init(propertySources: Array<PropertySource | ((config: Config) => PropertySource)>): Config {
     return new Config(propertySources);
@@ -22,6 +20,7 @@ export class Config extends PropertySource {
     return Config.instance.get<T>(property, defaultValue);
   }
 
+  private static instance: Config;
   private source: any;
 
   constructor(private readonly propertySources: Array<PropertySource | ((config: Config) => PropertySource)>) {
@@ -91,6 +90,5 @@ export class Config extends PropertySource {
     }
     return scope;
   }
-
 
 }

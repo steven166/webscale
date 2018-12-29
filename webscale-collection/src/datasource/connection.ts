@@ -1,7 +1,7 @@
-import { Collection } from "../collection";
-import { Ids } from "../models";
 import { Observable } from "rxjs";
 import { filter } from "rxjs/operators";
+import { Collection } from "../collection";
+import { Ids } from "../models";
 import { DatasourceEvent } from "./datasource.event";
 
 export abstract class Connection<T> {

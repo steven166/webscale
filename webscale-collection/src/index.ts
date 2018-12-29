@@ -1,6 +1,6 @@
-import { CollectionOptions } from "./models/collection.options";
 import { Collection } from "./collection";
 import { CollectionFactory } from "./factory";
+import { CollectionOptions } from "./models/collection.options";
 
 export * from "./factory";
 export * from "./models";
@@ -39,4 +39,3 @@ export function collection<T>(collectionName: string, options?: CollectionOption
 export function apiServer(options: { [name: string]: CollectionOptions }, expressApp: any): CollectionFactory {
   return defaultFactory().apiServer(options, expressApp);
 }
-

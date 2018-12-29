@@ -14,9 +14,9 @@ export class ObjectUtils {
       return o2;
     }
     if (typeof(o1) === "object") {
-      for(let property in o2) {
+      for (let property in o2) {
         if (o2[property]) {
-          if(o1[property]){
+          if (o1[property]) {
             o1[property] = ObjectUtils.deepMerge(o1[property], o2[property]);
           } else {
             o1[property] = o2[property];
@@ -32,9 +32,9 @@ export class ObjectUtils {
    * Deep freeze an object
    * @param o
    */
-  public static deepFreeze(o: any): any{
-    if(o && typeof(o) === "object"){
-      for(let property in o) {
+  public static deepFreeze(o: any): any {
+    if (o && typeof(o) === "object") {
+      for (let property in o) {
         if (o[property]) {
           o[property] = ObjectUtils.deepFreeze(o[property]);
         }

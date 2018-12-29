@@ -1,9 +1,9 @@
 import { Logger } from "@webscale/core";
-import { KeyValueConnection } from "./key-value.connection";
-import { Collection } from "../collection";
 import { Observable, Subject } from "rxjs";
-import { DatasourceEvent, DatasourceEventType } from "./datasource.event";
 import { filter } from "rxjs/operators";
+import { Collection } from "../collection";
+import { DatasourceEvent, DatasourceEventType } from "./datasource.event";
+import { KeyValueConnection } from "./key-value.connection";
 
 const logger = Logger.create("@webscale/datasource");
 
@@ -14,6 +14,14 @@ export class InMemoryConnection<T> extends KeyValueConnection<T> {
 
   private collections = new Map();
   private stream: Subject<DatasourceEvent<T>> = new Subject<DatasourceEvent<T>>();
+
+  public close(): void {
+    // not implemented
+  }
+
+  public watch(collection: Collection<T>): Observable<DatasourceEvent<T>> {
+    return this.stream.pipe(filter(item => item.collection === collection.name));
+  }
 
   protected saveForPath(collection: Collection<T>, pathSegments: string[], item: T): Promise<T> {
     if (!this.collections[collection.name]) {
@@ -146,14 +154,6 @@ export class InMemoryConnection<T> extends KeyValueConnection<T> {
       scope = scope.get(segment);
     }
     return scope;
-  }
-
-  public close(): void {
-    // not implemented
-  }
-
-  public watch(collection: Collection<T>): Observable<DatasourceEvent<T>> {
-    return this.stream.pipe(filter(item => item.collection === collection.name));
   }
 
 }

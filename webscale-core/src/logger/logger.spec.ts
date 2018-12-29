@@ -1,5 +1,5 @@
-import { Logger } from "./logger";
 import { assert } from "chai";
+import { Logger } from "./logger";
 
 describe("@webscale/core/logger", () => {
 

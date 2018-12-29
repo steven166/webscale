@@ -1,6 +1,6 @@
 {
   "name": "@webscale/core",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Webscale core library for logging and config",
   "main": "index.js",
   "author": "S. Hermans <s.hermans@maxxton.com>",
@@ -11,7 +11,7 @@
     "build": "rm -rf dist/* && (mkdir dist || true) && yarn run _copy.resources && yarn run _copy.schemas && ./node_modules/.bin/tsc -p tsconfig.build.json",
     "setup": "yarn --freeze-lockfile",
     "link": "cd dist && yarn link",
-    "lint": "./node_modules/.bin/tslint -e **/node_modules/** --project tsconfig.json",
+    "lint": "./node_modules/.bin/tslint -e **/node_modules/** -e **/dist/** --project tsconfig.json",
     "watch": "rm -rf dist/* && (mkdir dist || true) && yarn run _copy.resources && yarn run _copy.schemas && yarn run link && ./node_modules/.bin/tsc -p tsconfig.json -w",
     "watchWin": "rm -rf dist/* && (mkdir dist || true) && yarn run _copy.resources && yarn run link && .\\node_modules\\.bin\\tsc -p tsconfig.json -w",
     "clean": "rm -rf dist/*",

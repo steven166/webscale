@@ -1,5 +1,5 @@
-import {PropertySource} from "./property-source";
-import {Config} from "./config";
+import { Config } from "./config";
+import { PropertySource } from "./property-source";
 
 export interface ConfigProperties {
 

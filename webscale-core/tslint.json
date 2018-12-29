@@ -13,6 +13,10 @@
     "arrow-parens": false,
     "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
     "no-submodule-imports": false,
-    "prefer-const": false
+    "prefer-const": false,
+    "prefer-conditional-expression": false,
+    "no-implicit-dependencies": false,
+    "forin": false,
+    "eofline": false
   }
 }

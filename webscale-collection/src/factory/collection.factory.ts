@@ -1,7 +1,6 @@
-import { CollectionOptions } from "../models/collection.options";
 import { Collection } from "../collection";
-import { createExpressRoutes } from "./routes.factory";
 import { Datasource } from "../datasource";
+import { CollectionOptions } from "../models/collection.options";
 
 /**
  * Factory for creating and managing collections
@@ -23,19 +22,6 @@ export class CollectionFactory {
   }
 
   /**
-   * Create collections with endpoints
-   * @param expressApp
-   * @param options
-   */
-  public apiServer(options: { [name: string]: CollectionOptions }, expressApp: any): CollectionFactory {
-    for (let collectionName in options) {
-      this.collection(collectionName, options[collectionName]);
-    }
-    createExpressRoutes(expressApp, this);
-    return this;
-  }
-
-  /**
    * Create or get a collection
    * @param collectionName
    * @param {CollectionOptions} options
@@ -47,7 +33,7 @@ export class CollectionFactory {
     if (existingCollection) {
       return existingCollection;
     }
-    let parentCollection: Collection<any> = undefined;
+    let parentCollection: Collection<any>;
     if (options.parent) {
       if (!(options.parent instanceof Collection)) {
         parentCollection = this.getCollection(options.parent);
@@ -109,7 +95,7 @@ export class CollectionFactory {
    * Get collections
    * @returns {Collection<any>[]}
    */
-  public getCollections(): Collection<any>[] {
+  public getCollections(): Array<Collection<any>> {
     let list = [];
     for (let key in this.collections) {
       list.push(this.collections[key]);

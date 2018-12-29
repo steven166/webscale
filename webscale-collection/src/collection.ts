@@ -1,22 +1,21 @@
-import { Connection, Datasource } from "./datasource";
-import { BadRequestError, NotFoundError, Logger } from "@webscale/core";
-import { Observable, Subject } from "rxjs";
-import { Search, Filter, Ids, CollectionEvent, CollectionEventType } from "./models";
-import { flatMap, filter, toArray } from 'rxjs/operators';
+import { BadRequestError, Logger, NotFoundError } from "@webscale/core";
 import * as Ajv from "ajv";
 import { JSONSchema7 } from "json-schema";
+import { Observable, Subject } from "rxjs";
+import { filter, flatMap, toArray } from "rxjs/operators";
+import { Connection, Datasource } from "./datasource";
 import { CollectionFactory } from "./factory";
+import { CollectionEvent, CollectionEventType, Filter, Ids, Search } from "./models";
 import { Context } from "./models/context";
-import { log } from "util";
 
 const logger = Logger.create("@webscale/collection");
 
 export class Collection<T extends Filter> {
 
+  public readonly children?: Array<Collection<any>> = [];
+
   private eventStream: Subject<CollectionEvent<T>> = new Subject();
   private schemaValidator: Ajv.ValidateFunction;
-
-  public readonly children?: Collection<any>[] = [];
 
   constructor(public readonly factory: CollectionFactory,
               public readonly name: string,
@@ -49,7 +48,7 @@ export class Collection<T extends Filter> {
               });
             }, e => {
               logger.verbose(`Unable to remove children of ${event.collection}/${event.name}`, e);
-            })
+            });
           } catch (e) {
             logger.verbose(`Unable to remove children of ${event.collection}/${event.name}`, e);
           }
@@ -98,7 +97,7 @@ export class Collection<T extends Filter> {
         this.getIdFields().forEach(field => subQuery[field] = search.query[field]);
         return collection.getAll({ query: subQuery }, context).pipe(toArray()).toPromise()
           .then(result => {
-            return { result, collection: collection.name }
+            return { result, collection: collection.name };
           });
       });
       // Wait for all query's to finish
@@ -137,7 +136,7 @@ export class Collection<T extends Filter> {
       this.getIdFields().forEach(field => subFilter[field] = search.query[field]);
       return collection.getAll({ query: subFilter }).pipe(toArray()).toPromise()
         .then(result => {
-          return { result, collection: collection.name }
+          return { result, collection: collection.name };
         });
     });
 
@@ -313,6 +312,7 @@ export class Collection<T extends Filter> {
    * @returns {Promise<void>}
    */
   private async checkParentsExists(search: Search): Promise<void> {
+    // tslint:disable-next-line
     let scopeCollection: Collection<any> = this;
     let chain: Array<Collection<any>> = [];
     while (scopeCollection.parent) {
@@ -334,7 +334,7 @@ export class Collection<T extends Filter> {
    * Get collection to include in the response
    * @param search
    */
-  private getIncludeCollections(search: Search): Collection<any>[] {
+  private getIncludeCollections(search: Search): Array<Collection<any>> {
     if (search.includes) {
       let collections = search.includes.map(include => {
         return {

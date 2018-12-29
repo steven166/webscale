@@ -6,7 +6,7 @@ export class HttpError extends Error {
   private _statusCode: number;
   private _validationErrors: ValidationMessage[];
 
-  constructor(message: string, statusCode: number, validationErrors?: ValidationMessage[]){
+  constructor(message: string, statusCode: number, validationErrors?: ValidationMessage[]) {
     super(message);
     Object.setPrototypeOf(this, HttpError.prototype);
     this._statusCode = statusCode;
