@@ -16,18 +16,19 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static from(object: any): PropertySource {
-    if (typeof(object) === "string") {
-      try {
-        return PropertySource.fromJson(object);
-      } catch (e) {
-        try{
-          return PropertySource.fromYaml(object);
-        }catch(ee){
-          throw new Error(`Unable to parse property source: ${ee.message}`);
-        }
-      }
-    }
-    return new ObjectPropertySource(object);
+    // if (typeof(object) === "string") {
+    //   try {
+    //     return PropertySource.fromJson(object);
+    //   } catch (e) {
+    //     try{
+    //       return PropertySource.fromYaml(object);
+    //     }catch(ee){
+    //       throw new Error(`Unable to parse property source: ${ee.message}`);
+    //     }
+    //   }
+    // }
+    // return new ObjectPropertySource(object);
+    return null;
   }
 
   /**
@@ -36,7 +37,8 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static fromYaml(yamlString: string): PropertySource {
-    return new ObjectPropertySource(yaml.parse(yamlString));
+    // return new ObjectPropertySource(yaml.parse(yamlString));
+    return null;
   }
 
   /**
@@ -45,7 +47,8 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static fromJson(jsonString: string): PropertySource {
-    return new ObjectPropertySource(JSON.parse(jsonString));
+    return null;
+    // return new ObjectPropertySource(JSON.parse(jsonString));
   }
 
   /**
@@ -54,7 +57,8 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static fromFile(file: string): PropertySource {
-    return new FilePropertySource(file);
+    return null;
+    // return new FilePropertySource(file);
   }
 
 }

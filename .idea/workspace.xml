@@ -2,66 +2,269 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dd6e4a3-e140-4cdf-9296-dba25e0f577c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/sample-app01/collections/project.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/sample-app01/config/collection.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/sample-app01/config/database.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/sample-app01/config/web.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/src/sample-app01/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/stryker.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/collection.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/collection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/connection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/datasource.event.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/datasource.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/in-memory.connection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/key-value.connection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/datasource/simple.datasource.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/factory/collection.factory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/factory/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/factory/routes.factory.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/models/collection.event.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/models/collection.options.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/models/context.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/models/ids.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/models/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/models/search.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/tests/collection-delete.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/tests/collection-get-all.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/tests/collection-get-item.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/src/tests/collection-save.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/stryker.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-collection/webscale-collection.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/errors/bad-request.error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/errors/http.error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/errors/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/errors/method-not-allowed.error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/errors/not-found.error.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/utils/file.utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-core/src/utils/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/src/queue.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/stryker.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/tsconfig.build.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/tslint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-queue/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webscale-worker/src/worker-handler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-cache/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-cache/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-cache/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-cache/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-cache/src/distributed-cache.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-cache/src/distributed-cache.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/config/config.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/config/config.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-cache/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-cache/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-cache/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-cache/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-core/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscale-core/src/config/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/config/config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscale-core/src/config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/config/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/config/object.property-source.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/config/object.property-source.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscale-core/src/config/property-source.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/config/property-source.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/handlers/console.log-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/handlers/console.log-handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/handlers/log-handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/handlers/log-handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/log-level.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/log-level.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-core/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/logger.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/logger.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/logger.options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/logger.options.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/logger.properties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/logger.properties.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-core/src/logger/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/logger/logger.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webscale-core/src/module/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-core/src/module/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-server-discovery/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-server-discovery/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webscale-server-discovery/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-server-discovery/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-worker/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-worker/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-worker/src/child-worker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-worker/src/child-worker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-worker/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-worker/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-worker/src/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-worker/src/message.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webscale-worker/src/worker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webscale-worker/src/worker.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/webscale$_webscale_collection_Collection__deleteItem_Trigger_delete_event.dat" NAME="@webscale/collection.Collection.#deleteItem.Trigger delete event Coverage Results" MODIFIED="1546106164796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1106375017">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.2" value="3" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="Dockerfile" value="1" />
+          <entry key="dockerignore" value="1" />
+          <entry key="js" value="15" />
+          <entry key="json" value="9" />
+          <entry key="map" value="1" />
+          <entry key="md" value="1" />
+          <entry key="ts" value="210" />
+          <entry key="yml" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Dockerfile" value="1" />
+          <entry key="JSON" value="6" />
+          <entry key="JavaScript" value="15" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Scratch" value="2" />
+          <entry key="SourceMap" value="1" />
+          <entry key="TypeScript" value="209" />
+          <entry key="YAML" value="2" />
+          <entry key="tsconfig" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Dockerfile" value="5" />
+          <entry key="dummy" value="1" />
+          <entry key="json" value="1" />
+          <entry key="ts" value="20304" />
+          <entry key="yml" value="203" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Dockerfile" value="5" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Scratch" value="584" />
+          <entry key="TypeScript" value="19923" />
+          <entry key="tsconfig" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="worker.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webscale-worker/src/worker.ts">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-get-all.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3298">
-              <caret line="194" column="27" selection-start-line="194" selection-start-column="27" selection-end-line="194" selection-end-column="27" />
+            <state relative-caret-position="255">
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-delete.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-114">
+              <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/collection.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="209" column="45" selection-start-line="209" selection-start-column="45" selection-end-line="209" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/in-memory.connection.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="child-worker.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webscale-worker/src/child-worker.ts">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/connection.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            <state relative-caret-position="569">
+              <caret line="63" column="54" lean-forward="true" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webscale-worker/src/index.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-save.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="45">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-get-item.spec.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/key-value.connection.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/simple.datasource.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webscale-collection/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -70,14 +273,49 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>webscale-core</find>
-      <find>server-discovery</find>
+      <find>toArray</find>
+      <find>logger.info</find>
+      <find>unknown co</find>
+      <find>Schema</find>
+      <find>Save item without</find>
+      <find>schemaValidator</find>
+      <find>validate</find>
+      <find>console.</find>
+      <find>Save item w</find>
+      <find>console.info</find>
+      <find>without id</find>
+      <find>Update child item wi</find>
+      <find>console</find>
+      <find>getSchema</find>
+      <find>this.collec</find>
+      <find>save</find>
+      <find>Ids</find>
+      <find>saveForPath</find>
+      <find>get</find>
+      <find>repo is inv</find>
+      <find>return</find>
+      <find>Save child item</find>
+      <find>match second filter</find>
+      <find>Match second filter</find>
+      <find>getKeys</find>
+      <find>logger</find>
+      <find>sourceMap</find>
+      <find>delete</find>
+      <find>getKeu</find>
+      <find>logger.</find>
     </findStrings>
     <replaceStrings>
       <replace>webscale-server-discovery</replace>
       <replace>cache</replace>
       <replace>worker</replace>
+      <replace>webscale-queue</replace>
+      <replace>webscale-collection</replace>
+      <replace>example</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/webscale-core/src/config</dir>
+      <dir>$PROJECT_DIR$/webscale-collection/src</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,57 +323,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webscale-logger/src/handlers/console.log-handler.ts" />
-        <option value="$PROJECT_DIR$/webscale-logger/package.json" />
-        <option value="$PROJECT_DIR$/webscale-logger/src/logger.spec.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/logger.spec.ts" />
-        <option value="$PROJECT_DIR$/webscale-cache/package.json" />
-        <option value="$PROJECT_DIR$/webscale-cache/README.md" />
-        <option value="$PROJECT_DIR$/webscale-core/src/index.ts" />
-        <option value="$PROJECT_DIR$/webscale-cache/src/local-cache.ts" />
-        <option value="$PROJECT_DIR$/webscale-cache/src/peer.ts" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/package.json" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/README.md" />
-        <option value="$PROJECT_DIR$/webscale-core/README.md" />
-        <option value="$PROJECT_DIR$/webscale-core/src/module/module.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/module/index.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/utils/object.utils.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/json.property-source.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/yaml.property-source.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/properties.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/package.json" />
-        <option value="$PROJECT_DIR$/.dockerignore" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/Dockerfile" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/webscale-cache/Dockerfile" />
-        <option value="$PROJECT_DIR$/webscale-cache/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/handlers/console.log-handler.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/handlers/log-handler.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/logger.module.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/logger.properties.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/logger.options.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/object.property-source.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/file.property-source.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/index.ts" />
         <option value="$PROJECT_DIR$/webscale-core/src/config/property-source.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/config.properties.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/config/config.module.ts" />
         <option value="$PROJECT_DIR$/webscale-core/src/config/config.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/log-level.ts" />
-        <option value="$PROJECT_DIR$/webscale-core/src/logger/logger.ts" />
+        <option value="$PROJECT_DIR$/webscale-core/src/logger/logger.module.ts" />
+        <option value="$PROJECT_DIR$/example/src/sample-app01/collections/project.collection.ts" />
+        <option value="$PROJECT_DIR$/example/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/webscale-collection/dist/factory/routes.factory.js" />
+        <option value="$PROJECT_DIR$/webscale-collection/README.md" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/factory/routes.factory.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/search.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/collection.spec.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/tests/collection-find-one.spec.ts" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_9.yml" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/file.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/file-reference.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/file-loader.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/helpers/file.helpers.ts" />
+        <option value="$PROJECT_DIR$/webscale-core/src/utils/index.ts" />
+        <option value="$PROJECT_DIR$/webscale-core/src/utils/file.utils.ts" />
+        <option value="$PROJECT_DIR$/webscale-core/src/errors/http.error.ts" />
+        <option value="$PROJECT_DIR$/webscale-core/src/errors/bad-request.error.ts" />
         <option value="$PROJECT_DIR$/webscale-core/src/module/app.ts" />
-        <option value="$PROJECT_DIR$/webscale-cache/src/distributed-cache.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/webscale-worker/package.json" />
-        <option value="$PROJECT_DIR$/webscale-worker/README.md" />
-        <option value="$PROJECT_DIR$/webscale-worker/index.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/src/thread.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/src/message.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/src/job.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/src/worker.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/src/child-worker.ts" />
-        <option value="$PROJECT_DIR$/webscale-worker/src/index.ts" />
+        <option value="$PROJECT_DIR$/example/src/sample-app01/index.ts" />
+        <option value="$PROJECT_DIR$/example/src/sample-app01/config/web.config.ts" />
+        <option value="$PROJECT_DIR$/example/src/sample-app01/config/collection.config.ts" />
+        <option value="$PROJECT_DIR$/example/src/sample-app01/collections/project.model.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/memory.datasource.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/factory/datasource.factory.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/key-value.datasource.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/context.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/factory/collection.factory.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/collection.event.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/in-memory.collection.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/connection.event.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/datasource.event.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/connection.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/models/collection.options.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/in-memory.datasource.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/simple.datasource.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/datasource.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/index.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/tsconfig.json" />
+        <option value="$PROJECT_DIR$/webscale-collection/Dockerfile" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/key-value.connection.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/tests/collection-save.spec.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/datasource/in-memory.connection.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/index.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/tests/collection-delete.spec.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/tests/collection-get-item.spec.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/tests/collection-get-all.spec.ts" />
+        <option value="$PROJECT_DIR$/webscale-collection/src/collection.ts" />
       </list>
     </option>
   </component>
@@ -145,24 +383,40 @@
     <package-json value="$PROJECT_DIR$/webscale-server-discovery/package.json" />
     <package-json value="$PROJECT_DIR$/webscale-cache/package.json" />
     <package-json value="$PROJECT_DIR$/webscale-worker/package.json" />
+    <package-json value="$PROJECT_DIR$/webscale-queue/package.json" />
+    <package-json value="$PROJECT_DIR$/example/package.json" />
+    <package-json value="$PROJECT_DIR$/webscale-collection/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/example/node_modules" />
     <handled-path value="$PROJECT_DIR$/webscale-cache/node_modules" />
+    <handled-path value="$PROJECT_DIR$/webscale-collection/node_modules" />
+    <handled-path value="$PROJECT_DIR$/webscale-core/dist/node_modules" />
     <handled-path value="$PROJECT_DIR$/webscale-core/node_modules" />
-    <handled-path value="$PROJECT_DIR$/webscale-server-discovery/node_modules" />
+    <handled-path value="$PROJECT_DIR$/webscale-queue/node_modules" />
     <handled-path value="$PROJECT_DIR$/webscale-worker/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/webscale-cache/dist/package.json" />
+      <path value="$PROJECT_DIR$/example/dist/package.json" />
+      <path value="$PROJECT_DIR$/example/package.json" />
       <path value="$PROJECT_DIR$/webscale-cache/package.json" />
+      <path value="$PROJECT_DIR$/webscale-collection/dist/package.json" />
+      <path value="$PROJECT_DIR$/webscale-collection/package.json" />
       <path value="$PROJECT_DIR$/webscale-core/dist/package.json" />
       <path value="$PROJECT_DIR$/webscale-core/package.json" />
-      <path value="$PROJECT_DIR$/webscale-server-discovery/dist/package.json" />
+      <path value="$PROJECT_DIR$/webscale-queue/dist/package.json" />
+      <path value="$PROJECT_DIR$/webscale-queue/package.json" />
       <path value="$PROJECT_DIR$/webscale-server-discovery/package.json" />
       <path value="$PROJECT_DIR$/webscale-worker/dist/package.json" />
       <path value="$PROJECT_DIR$/webscale-worker/package.json" />
@@ -172,7 +426,7 @@
     <dismissed value="$PROJECT_DIR$/webscale-core/package.json" />
     <dismissed value="$PROJECT_DIR$/webscale-worker/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1680" />
     <option name="height" value="1050" />
   </component>
@@ -393,13 +647,14 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -410,24 +665,82 @@
             <path>
               <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
               <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-collection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-collection" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="logger" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
+              <item name="webscale-core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="module" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webscale" type="462c0819:PsiDirectoryNode" />
               <item name="webscale-worker" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
               <item name="webscale" type="462c0819:PsiDirectoryNode" />
               <item name="webscale-worker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+            </path>
+            <path>
+              <item name="webscale" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/steven/Documents/projects/webscale/webscale-collection/src/factory/collection.factory.ts" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TypeScript&#10;yaml" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -436,26 +749,31 @@
     <property name="node.js.selected.package.eslint" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="$PROJECT_DIR$/webscale-core/node_modules/tslint" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/webscale-collection/node_modules/mocha" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
-    <property name="ts.external.directory.path" value="$PROJECT_DIR$/webscale-core/node_modules/typescript/lib" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/webscale-worker/node_modules/typescript/lib" />
+    <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\steve\projects\steven166\webscale\webscale-worker\src" />
-      <recent name="$PROJECT_DIR$/webscale-logger/src/logger" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\steve\projects\steven166\webscale\webscale-worker" />
-      <recent name="$PROJECT_DIR$/webscale-server-discovery" />
-      <recent name="$PROJECT_DIR$/webscale-core/src/config" />
-      <recent name="$PROJECT_DIR$/webscale-cache/src" />
-      <recent name="$PROJECT_DIR$/webscale-core/src" />
+      <recent name="$PROJECT_DIR$/webscale-core/src/utils" />
+      <recent name="$PROJECT_DIR$/webscale-collection/src/tests" />
+      <recent name="$PROJECT_DIR$/example/src/sample-app01/config" />
+      <recent name="$PROJECT_DIR$/webscale-core/src/errors" />
+      <recent name="$PROJECT_DIR$/webscale-collection" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/webscale-collection/src/tests" />
+      <recent name="$PROJECT_DIR$/webscale-collection/src/factory" />
+      <recent name="$PROJECT_DIR$/webscale-collection/src/datasource" />
+      <recent name="$PROJECT_DIR$/webscale-collection/src" />
+      <recent name="$PROJECT_DIR$/webscale-collection/src/models" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -470,32 +788,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HEIGHT" value="0" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="WIDTH" value="0" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/webscale-worker/dist" />
+  <component name="RunManager" selected="Mocha.src/tests/collection-get-all.spec.ts">
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -518,68 +811,106 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <configuration name="dockerWatch (1)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/webscale-server-discovery/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dockerWatch" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HEIGHT" value="0" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="WIDTH" value="0" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="dockerWatch (2)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/webscale-cache/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dockerWatch" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="dockerWatch (3)" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/webscale-worker/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dockerWatch" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="dockerWatch" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/webscale-core/package.json" />
+    <configuration name="test" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/webscale-collection/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dockerWatch" />
+        <script value="test" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="@webscale/collection.Collection.#deleteItem.Trigger delete event" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/webscale-collection</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/webscale-collection/src/tests/collection-delete.spec.ts</test-file>
+      <test-names>
+        <name value="@webscale/collection" />
+        <name value="Collection" />
+        <name value="#deleteItem" />
+        <name value="Trigger delete event" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="src/tests/collection-get-all.spec.ts" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/webscale-collection</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/webscale-collection/src/tests/collection-get-all.spec.ts</test-file>
+      <method v="2" />
+    </configuration>
+    <configuration name="src/tests/collection-get-item.spec.ts" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/webscale-collection</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/webscale-collection/src/tests/collection-get-item.spec.ts</test-file>
+      <method v="2" />
+    </configuration>
+    <configuration name="src/tests/collection-save.spec.ts" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$/webscale-collection</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/webscale-collection/src/tests/collection-save.spec.ts</test-file>
+      <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Node.js.index.js" />
-      <item itemvalue="npm.dockerWatch" />
-      <item itemvalue="npm.dockerWatch (1)" />
-      <item itemvalue="npm.dockerWatch (2)" />
-      <item itemvalue="npm.dockerWatch (3)" />
+      <item itemvalue="Mocha.@webscale/collection.Collection.#deleteItem.Trigger delete event" />
+      <item itemvalue="Mocha.src/tests/collection-save.spec.ts" />
+      <item itemvalue="Mocha.src/tests/collection-get-item.spec.ts" />
+      <item itemvalue="Mocha.src/tests/collection-get-all.spec.ts" />
+      <item itemvalue="npm.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dockerWatch (3)" />
-        <item itemvalue="npm.dockerWatch (1)" />
-        <item itemvalue="npm.dockerWatch" />
-        <item itemvalue="npm.dockerWatch (2)" />
+        <item itemvalue="npm.test" />
+        <item itemvalue="Mocha.src/tests/collection-get-all.spec.ts" />
+        <item itemvalue="Mocha.src/tests/collection-get-item.spec.ts" />
+        <item itemvalue="Mocha.src/tests/collection-save.spec.ts" />
+        <item itemvalue="Mocha.@webscale/collection.Collection.#deleteItem.Trigger delete event" />
       </list>
     </recent_temporary>
   </component>
@@ -603,447 +934,547 @@
       <workItem from="1525013559499" duration="196000" />
       <workItem from="1525015618013" duration="69000" />
       <workItem from="1525015727830" duration="1050000" />
+      <workItem from="1525965199204" duration="3805000" />
+      <workItem from="1527003074729" duration="5568000" />
+      <workItem from="1527611540557" duration="11522000" />
+      <workItem from="1527694399686" duration="8918000" />
+      <workItem from="1528135370085" duration="902000" />
+      <workItem from="1528139358969" duration="924000" />
+      <workItem from="1529601446523" duration="3073000" />
+      <workItem from="1537287302601" duration="8157000" />
+      <workItem from="1537375191295" duration="11999000" />
+      <workItem from="1537609942866" duration="198000" />
+      <workItem from="1538327135508" duration="7424000" />
+      <workItem from="1543009662152" duration="6139000" />
+      <workItem from="1546022511111" duration="13176000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="@webscale_collection_Collection_#deleteItem_Trigger_delete_event - 2018.12.29 at 18h 56m 34s.xml">
+      <configuration name="@webscale/collection.Collection.#deleteItem.Trigger delete event" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="@webscale_collection_Collection_#deleteItem_Trigger_delete_event - 2018.12.29 at 18h 56m 40s.xml">
+      <configuration name="@webscale/collection.Collection.#deleteItem.Trigger delete event" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="@webscale_collection_Collection_#deleteItem_Trigger_delete_event - 2018.12.29 at 18h 56m 59s.xml">
+      <configuration name="@webscale/collection.Collection.#deleteItem.Trigger delete event" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="@webscale_collection_Collection_#deleteItem_Trigger_delete_event - 2018.12.29 at 18h 58m 16s.xml">
+      <configuration name="@webscale/collection.Collection.#deleteItem.Trigger delete event" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="@webscale_collection_Collection_#deleteItem_Trigger_delete_event - 2018.12.29 at 18h 58m 23s.xml">
+      <configuration name="@webscale/collection.Collection.#deleteItem.Trigger delete event" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="src_tests_collection-save_spec_ts - 2018.12.29 at 18h 58m 57s.xml">
+      <configuration name="src/tests/collection-save.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="src_tests_collection-get-item_spec_ts - 2018.12.29 at 18h 59m 08s.xml">
+      <configuration name="src/tests/collection-get-item.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="src_tests_collection-get-item_spec_ts - 2018.12.29 at 18h 59m 21s.xml">
+      <configuration name="src/tests/collection-get-item.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="src_tests_collection-get-all_spec_ts - 2018.12.29 at 18h 59m 29s.xml">
+      <configuration name="src/tests/collection-get-all.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="src_tests_collection-get-all_spec_ts - 2018.12.29 at 18h 59m 37s.xml">
+      <configuration name="src/tests/collection-get-all.spec.ts" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25229000" />
+    <option name="totallyTimeSpent" value="107034000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="OpenShift Origin" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32935432" />
-      <window_info id="npm" order="2" sideWeight="0.5174292" side_tool="true" visible="true" weight="0.25226668" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.35947713" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4825708" visible="true" weight="0.25226668" />
-      <window_info anchor="bottom" id="Docker" order="7" weight="0.32985595" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.5540816" visible="true" weight="0.18498169" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998915" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.44591838" side_tool="true" visible="true" weight="0.18498169" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35612243" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3989796" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
+      <window_info anchor="bottom" id="Docker" order="7" weight="0.32985595" />
+      <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32959184" />
+      <window_info anchor="bottom" id="OpenShift Origin" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3469388" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32967034" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47589743" visible="true" weight="0.0054945056" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.52410257" side_tool="true" visible="true" weight="0.0054945056" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3271795" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998915" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" weight="0.32985595" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
+      <window_info anchor="bottom" id="OpenShift Origin" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3476923" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/stryker-html-reporter/src/templates/sourceFile.js" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/stryker-html-reporter/src/templates/layout.js" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/stryker-html-reporter/src/templates/resultTable.js" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/stryker-html-reporter/src/templates/directory.js" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/stryker-html-reporter/src/templates/mutantTable.js" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/typed-html/src/elements.js" />
-        <option value="$PROJECT_DIR$/webscale-server-discovery/node_modules/typed-html/src/elements.js.map" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/stryker-html-reporter/src/templates/sourceFile.js" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/stryker-html-reporter/src/templates/layout.js" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/stryker-html-reporter/src/templates/resultTable.js" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/stryker-html-reporter/src/templates/directory.js" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/stryker-html-reporter/src/templates/mutantTable.js" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/typed-html/src/elements.js" />
+        <option value="$PROJECT_DIR$/webscale-queue/node_modules/typed-html/src/elements.js.map" />
+        <option value="$PROJECT_DIR$/example/node_modules/stryker-html-reporter/src/templates/sourceFile.js" />
+        <option value="$PROJECT_DIR$/example/node_modules/stryker-html-reporter/src/templates/layout.js" />
+        <option value="$PROJECT_DIR$/example/node_modules/stryker-html-reporter/src/templates/resultTable.js" />
+        <option value="$PROJECT_DIR$/example/node_modules/stryker-html-reporter/src/templates/directory.js" />
+        <option value="$PROJECT_DIR$/example/node_modules/stryker-html-reporter/src/templates/mutantTable.js" />
+        <option value="$PROJECT_DIR$/example/node_modules/typed-html/src/elements.js" />
+        <option value="$PROJECT_DIR$/example/node_modules/typed-html/src/elements.js.map" />
       </list>
     </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/webscale-worker/dist/index.js</url>
-          <line>3</line>
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/thread.ts">
+    <entry file="file://$PROJECT_DIR$/example/src/sample-app01/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+        <state relative-caret-position="300">
+          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88910">
-          <caret line="5230" column="4" selection-start-line="5230" selection-start-column="4" selection-end-line="5230" selection-end-column="4" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/models/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/message.ts">
+    <entry file="file://$PROJECT_DIR$/example/src/sample-app01/config/web.config.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/node_modules/@types/node/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34816">
-          <caret line="2048" column="8" selection-start-line="2048" selection-start-column="8" selection-end-line="2048" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/worker.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3298">
-          <caret line="194" column="27" lean-forward="true" selection-start-line="194" selection-start-column="27" selection-end-line="194" selection-end-column="27" />
+        <state relative-caret-position="195">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-cache/src/local-cache.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-cache/src/peer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-server-discovery/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-server-discovery/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="30">
-            <caret line="2" column="53" selection-start-line="2" selection-start-column="53" selection-end-line="2" selection-end-column="53" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="150">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/module/module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/module/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/json.property-source.ts" />
-    <entry file="file://$PROJECT_DIR$/webscale-core/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1419">
-          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-server-discovery/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="29" column="16" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-server-discovery/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="30" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-cache/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-cache/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="902">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/handlers/log-handler.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/handlers/console.log-handler.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.properties.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/object.property-source.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/file.property-source.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webscale-core/src/config/config.properties.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/config.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/properties.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" selection-start-line="1" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/property-source.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/config.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/log-level.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.options.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/module/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/src/utils/object.utils.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1254">
-          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-cache/src/distributed-cache.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-core/dist/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/tsconfig.build.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="99">
-            <caret line="3" selection-start-line="3" selection-end-line="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/dist/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88689">
-          <caret line="5230" column="4" selection-start-line="5230" selection-start-column="4" selection-end-line="5230" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/node_modules/@types/node/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34170">
-          <caret line="2048" column="8" selection-start-line="2048" selection-start-column="8" selection-end-line="2048" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/thread.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+        <state>
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/job.ts">
+    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/config.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        <state>
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/message.ts">
+    <entry file="file://$PROJECT_DIR$/webscale-core/src/config/property-source.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        <state>
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/worker.ts">
+    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3298">
-          <caret line="194" column="27" selection-start-line="194" selection-start-column="27" selection-end-line="194" selection-end-column="27" />
+        <state>
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/child-worker.ts">
+    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.options.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-core/src/logger/logger.properties.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/collection.module.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/sample-app01/config/database.config.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/sample-app01/collections/project.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#66#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/factory/routes.factory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/models/ids.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/models/search.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="42" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/factory/datasource.factory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/models/context.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/key-value.datasource.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webscale-worker/src/index.ts">
+    <entry file="file://$PROJECT_DIR$/webscale-collection/node_modules/rxjs/src/internal/operators/filter.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state relative-caret-position="75">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/models/collection.event.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-worker/node_modules/typescript/lib/lib.es2015.collection.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/factory/collection.factory.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="44" column="62" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/models/collection.options.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/datasource.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/datasource.event.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/datasource/in-memory.connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="15" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/src/sample-app01/config/collection.config.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/datasource/key-value.connection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tsconfig.build.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/collection.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/collection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/tests/collection-delete.spec.js.map">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/dist/tests/collection-delete.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/simple.datasource.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/key-value.connection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-delete.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-save.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-get-item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="108" column="34" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/tests/collection-get-all.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/in-memory.connection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/collection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="209" column="45" selection-start-line="209" selection-start-column="45" selection-end-line="209" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webscale-collection/src/datasource/connection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="63" column="54" lean-forward="true" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1076,7 +1507,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>groovy-2.4.8</last-edited>
+          <last-edited>groovy-2.4.11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1100,7 +1531,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>webscale-cache</last-edited>
+          <last-edited>webscale-collection</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

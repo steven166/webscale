@@ -1,5 +1,5 @@
-import {PropertySource} from "./property-source";
-import {ObjectUtils} from "../utils/object.utils";
+import { PropertySource } from "./property-source";
+import { ObjectUtils } from "../utils/object.utils";
 
 export class Config extends PropertySource {
 
@@ -53,17 +53,19 @@ export class Config extends PropertySource {
     }
     let combinedSources = {};
     for (let propertySource of this.propertySources) {
-      if (typeof(propertySource) === "function") {
-        propertySource = propertySource(this);
-      } else if (!(propertySource instanceof PropertySource)) {
-        propertySource = PropertySource.from(propertySource);
-      }
-      let source = await propertySource.load();
-      ObjectUtils.deepMerge(combinedSources, source);
+      if (propertySource) {
+        if (typeof(propertySource) === "function") {
+          propertySource = propertySource(this);
+        } else if (!(propertySource instanceof PropertySource)) {
+          propertySource = PropertySource.from(propertySource);
+        }
+        let source = await propertySource.load();
+        ObjectUtils.deepMerge(combinedSources, source);
 
-      for (let property in combinedSources) {
-        if (combinedSources[property] && this[property] === undefined) {
-          Object.defineProperty(this, property, {get: () => combinedSources[property]});
+        for (let property in combinedSources) {
+          if (combinedSources[property] && this[property] === undefined) {
+            Object.defineProperty(this, property, { get: () => combinedSources[property] });
+          }
         }
       }
     }

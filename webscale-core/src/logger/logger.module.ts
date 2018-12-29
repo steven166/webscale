@@ -13,7 +13,7 @@ export class LoggerModule implements Module {
   public async load(app: App): Promise<void> {
     if (this.properties) {
       Logger.configure(this.properties);
-    } else if (app.config) {
+    } else if (app.config && app.config.webscale) {
       Logger.configure(app.config.webscale.logger);
     }
   }

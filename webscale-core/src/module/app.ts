@@ -12,6 +12,7 @@ export class App {
 
   private modules: Module[] = [];
   public config: Config;
+  public attributes: {[name: string]: any};
 
   public load(module: Module): App {
     this.modules.push(module);
@@ -32,21 +33,4 @@ export class App {
   }
 
 }
-
-let app = new App();
-app.load(new ConfigModule({
-  sources: [
-    PropertySource.fromFile("application.yml")
-  ]
-}));
-app.load(new LoggerModule({
-  level: LogLevel.SILLY,
-  handlers: ["console"]
-}));
-
-app.startup().then(async () => {
-
-}).catch(e => {
-  process.exit(1);
-});
 

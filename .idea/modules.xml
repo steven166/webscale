@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale.iml" filepath="$PROJECT_DIR$/webscale.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-cache/webscale-cache.iml" filepath="$PROJECT_DIR$/webscale-cache/webscale-cache.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webscale-cache/webscale-cache.iml" filepath="$PROJECT_DIR$/webscale-cache/webscale-cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webscale-collection/webscale-collection.iml" filepath="$PROJECT_DIR$/webscale-collection/webscale-collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-core/webscale-core.iml" filepath="$PROJECT_DIR$/webscale-core/webscale-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webscale-core/webscale-core.iml" filepath="$PROJECT_DIR$/webscale-core/webscale-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webscale-server-discovery/webscale-server-discovery.iml" filepath="$PROJECT_DIR$/webscale-server-discovery/webscale-server-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webscale-queue/webscale-queue.iml" filepath="$PROJECT_DIR$/webscale-queue/webscale-queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-server-discovery/webscale-server-discovery.iml" filepath="$PROJECT_DIR$/webscale-server-discovery/webscale-server-discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/webscale-worker/webscale-worker.iml" filepath="$PROJECT_DIR$/webscale-worker/webscale-worker.iml" />
     </modules>
