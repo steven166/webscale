@@ -1,4 +1,6 @@
-import * as yaml from "yamljs";
+import { EnvPropertySource } from "./env.property-source";
+import { FilePropertySource } from "./file.property-source";
+import { ObjectPropertySource } from "./object.property-source";
 
 export abstract class PropertySource {
 
@@ -8,19 +10,18 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static from(object: any): PropertySource {
-    // if (typeof(object) === "string") {
-    //   try {
-    //     return PropertySource.fromJson(object);
-    //   } catch (e) {
-    //     try{
-    //       return PropertySource.fromYaml(object);
-    //     }catch(ee){
-    //       throw new Error(`Unable to parse property source: ${ee.message}`);
-    //     }
-    //   }
-    // }
-    // return new ObjectPropertySource(object);
-    return null;
+    if (typeof(object) === "string") {
+      try {
+        return PropertySource.fromJson(object);
+      } catch (e) {
+        try {
+          return PropertySource.fromYaml(object);
+        } catch (ee) {
+          throw new Error(`Unable to parse property source: ${ee.message}`);
+        }
+      }
+    }
+    return new ObjectPropertySource(object);
   }
 
   /**
@@ -29,8 +30,8 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static fromYaml(yamlString: string): PropertySource {
-    // return new ObjectPropertySource(yaml.parse(yamlString));
-    return null;
+    const yaml = require("yamljs");
+    return new ObjectPropertySource(yaml.parse(yamlString));
   }
 
   /**
@@ -39,8 +40,7 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static fromJson(jsonString: string): PropertySource {
-    return null;
-    // return new ObjectPropertySource(JSON.parse(jsonString));
+    return new ObjectPropertySource(JSON.parse(jsonString));
   }
 
   /**
@@ -49,8 +49,14 @@ export abstract class PropertySource {
    * @return {PropertySource}
    */
   public static fromFile(file: string): PropertySource {
-    return null;
-    // return new FilePropertySource(file);
+    return new FilePropertySource(file);
+  }
+
+  /**
+   * Create property source from environments variables
+   */
+  public static fromEnv(): PropertySource {
+    return new EnvPropertySource();
   }
 
   /**

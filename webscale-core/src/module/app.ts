@@ -9,7 +9,7 @@ const logger = Logger.create("@winston/app");
 export class App {
 
   public config: Config;
-  public attributes: { [name: string]: any };
+  public attributes: { [name: string]: any } = {};
   private modules: Module[] = [];
 
   public load(module: Module): App {

@@ -30,12 +30,3 @@ export function defaultFactory(): CollectionFactory {
 export function collection<T>(collectionName: string, options?: CollectionOptions, decorate?: any): Collection<T> {
   return defaultFactory().collection(collectionName, options, decorate as any);
 }
-
-/**
- * Create collections with endpoints
- * @param expressApp
- * @param options
- */
-export function apiServer(options: { [name: string]: CollectionOptions }, expressApp: any): CollectionFactory {
-  return defaultFactory().apiServer(options, expressApp);
-}

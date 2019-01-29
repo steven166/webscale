@@ -1,6 +1,6 @@
 {
   "name": "@webscale/collection-redis",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Redis Datasource for the @webscale/collection framework",
   "main": "index.js",
   "author": "S. Hermans <s.hermans@maxxton.com>",
@@ -48,8 +48,10 @@
     "typescript": "^2.7.2"
   },
   "dependencies": {
-    "@webscale/collection": "0.1.0",
-    "@webscale/core": "0.1.0",
-    "ioredis": "^4.3.0"
+    "@webscale/collection": "0.3.0",
+    "@webscale/core": "0.3.0",
+    "ioredis": "^4.3.0",
+    "ajv": "^6.5.4",
+    "rxjs": "^6.1.0"
   }
 }

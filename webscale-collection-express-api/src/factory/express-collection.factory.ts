@@ -16,7 +16,7 @@ export function createExpressRoutes(express: Application, collectionFactory: Col
 
   collectionFactory.getCollections().forEach(collection => {
     let path = getEndpointPath(collection);
-    let itemPath = path + getFieldPath(collection);
+    let itemPath = path + "/" + getFieldPath(collection);
 
     express.get(path, (req, res, next) => {
       let includes = req.query && req.query.includes && req.query.includes.split(",") || [];
@@ -116,7 +116,7 @@ export function createExpressSwaggerRoute(express: Application,
       docs.paths = {};
     }
     let path = getEndpointPath(collection, "swagger");
-    let itemPath = path + getFieldPath(collection, "swagger");
+    let itemPath = path + "/" + getFieldPath(collection, "swagger");
     let pathParams = getEndpointAllParams(collection);
     let itemPathParams = getEndpointParams(collection).concat(pathParams);
 

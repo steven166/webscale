@@ -15,7 +15,7 @@ export function apiServer(collections: { [name: string]: CollectionOptions },
   for (let collectionName in collections) {
     factory.collection(collectionName, collections[collectionName]);
   }
-  createExpressRoutes(options.express, this);
+  createExpressRoutes(options.express, factory);
   if (options && options.apiDocs) {
     createExpressSwaggerRoute(options.express, factory);
   }
