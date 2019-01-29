@@ -1,3 +1,4 @@
+import { PropertySources } from "./property-sources";
 import { PropertySource } from "./property-source";
 
 /**
@@ -21,7 +22,7 @@ export class FilePropertySource extends PropertySource {
             resolve(this);
           } else {
             try {
-              resolve(PropertySource.from(data.toString()));
+              resolve(PropertySources.from(data.toString()));
             } catch (e) {
               reject(e);
             }

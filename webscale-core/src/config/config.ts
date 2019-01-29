@@ -1,5 +1,6 @@
 import { ObjectUtils } from "../utils/object.utils";
 import { PropertySource } from "./property-source";
+import { PropertySources } from "./property-sources";
 
 export class Config extends PropertySource {
 
@@ -56,7 +57,7 @@ export class Config extends PropertySource {
         if (typeof(propertySource) === "function") {
           propertySource = propertySource(this);
         } else if (!(propertySource instanceof PropertySource)) {
-          propertySource = PropertySource.from(propertySource);
+          propertySource = PropertySources.from(propertySource);
         }
         let source = await propertySource.load();
         ObjectUtils.deepMerge(combinedSources, source);
