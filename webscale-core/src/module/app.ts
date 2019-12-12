@@ -4,7 +4,7 @@ import { Config } from "../config";
 import { Logger } from "../logger";
 import { Module } from "./module";
 
-const logger = Logger.create("@winston/app");
+const logger = Logger.create("@webscale/app");
 
 export class App {
 

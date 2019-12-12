@@ -16,7 +16,7 @@ export function createExpressRoutes(express: Application, collectionFactory: Col
 
   collectionFactory.getCollections().forEach(collection => {
     let path = getEndpointPath(collection);
-    let itemPath = path + "/" + getFieldPath(collection);
+    let itemPath = path + getFieldPath(collection);
 
     express.get(path, (req, res, next) => {
       let includes = req.query && req.query.includes && req.query.includes.split(",") || [];
@@ -67,16 +67,40 @@ export function createExpressRoutes(express: Application, collectionFactory: Col
           next(new MethodNotAllowedError(req.method));
         }
       });
-
-      express.use(itemPath, (req, res, next) => {
-        if (req.method === "get" || (!collection.readonly && (req.method === "put" || req.method === "delete"))) {
-          next();
-        } else {
-          next(new MethodNotAllowedError(req.method));
-        }
-      });
     }
 
+    collection.actions.filter(action => action.method).forEach(action => {
+      express[action.method](itemPath + `/${action.name}`, async (req, res, next) => {
+        let params: any = {};
+        for (let key in req.params) {
+          if (req.params[key]) {
+            params[key] = req.params[key];
+          }
+        }
+        if (req.body) {
+          params.body = req.body;
+        }
+        let result = await action.func(params);
+        if (result === undefined) {
+          res.json({});
+        } else {
+          res.json(result);
+        }
+      });
+    });
+
+  });
+  collectionFactory.getCollections().forEach(collection => {
+    let path = getEndpointPath(collection);
+    let itemPath = path + getFieldPath(collection);
+
+    express.use(itemPath, (req, res, next) => {
+      if (req.method === "get" || (!collection.readonly && (req.method === "put" || req.method === "delete"))) {
+        next();
+      } else {
+        next(new MethodNotAllowedError(req.method));
+      }
+    });
   });
 
 }
@@ -116,7 +140,7 @@ export function createExpressSwaggerRoute(express: Application,
       docs.paths = {};
     }
     let path = getEndpointPath(collection, "swagger");
-    let itemPath = path + "/" + getFieldPath(collection, "swagger");
+    let itemPath = path + getFieldPath(collection, "swagger");
     let pathParams = getEndpointAllParams(collection);
     let itemPathParams = getEndpointParams(collection).concat(pathParams);
 
@@ -329,9 +353,9 @@ function getEndpointPath(collection: Collection<any>, pattern: "express" | "swag
 function getFieldPath(collection: Collection<any>, pattern: "express" | "swagger" = "express"): string {
   return collection.primaryFields.map(field => {
     if (pattern === "express") {
-      return ":" + field;
+      return "/:" + field;
     } else {
-      return `{${field}}`;
+      return `/{${field}}`;
     }
   }).join("/");
 }
@@ -339,12 +363,15 @@ function getFieldPath(collection: Collection<any>, pattern: "express" | "swagger
 function observableToJsonResponse(observable: Observable<any>, response: Response, next: NextFunction): void {
   let sendHeader = false;
   observable.subscribe(item => {
+    let prefix = "";
     if (!sendHeader) {
       response.set("content-type", "application/json").status(200);
       sendHeader = true;
       safeWrite(response, "[\n");
+    } else {
+      prefix = ",";
     }
-    safeWrite(response, JSON.stringify(item) + "\n");
+    safeWrite(response, prefix + JSON.stringify(item) + "\n");
   }, e => {
     next(e);
   }, () => {

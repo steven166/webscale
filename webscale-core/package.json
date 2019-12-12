@@ -1,6 +1,6 @@
 {
   "name": "@webscale/core",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Webscale core library for logging and config",
   "main": "index.js",
   "author": "S. Hermans <s.hermans@maxxton.com>",

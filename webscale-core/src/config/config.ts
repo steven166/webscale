@@ -22,7 +22,8 @@ export class Config extends PropertySource {
   }
 
   private static instance: Config;
-  private source: any;
+  // tslint:disable-next-line
+  private __source: any;
 
   constructor(private readonly propertySources: Array<PropertySource | ((config: Config) => PropertySource)>) {
     super();
@@ -36,7 +37,7 @@ export class Config extends PropertySource {
    * @returns {T | undefined}
    */
   public get<T>(property: string, defaultValue?: T): T | undefined {
-    let result = this.getFromObject(this.source, property) || undefined;
+    let result = this.getFromObject(this.__source, property) || undefined;
     if (result === undefined && defaultValue !== undefined) {
       result = defaultValue;
     }
@@ -48,7 +49,7 @@ export class Config extends PropertySource {
    * @returns {Promise<void>}
    */
   public async load(): Promise<Config> {
-    if (this.source) {
+    if (this.__source) {
       throw new Error(`Config already loaded`);
     }
     let combinedSources = {};
@@ -61,16 +62,16 @@ export class Config extends PropertySource {
         }
         let source = await propertySource.load();
         ObjectUtils.deepMerge(combinedSources, source);
+      }
+    }
 
-        for (let property in combinedSources) {
-          if (combinedSources[property] && this[property] === undefined) {
-            Object.defineProperty(this, property, { get: () => combinedSources[property] });
-          }
-        }
+    for (let property in combinedSources) {
+      if (combinedSources[property] && this[property] === undefined) {
+        Object.defineProperty(this, property, { get: () => combinedSources[property] });
       }
     }
     ObjectUtils.deepFreeze(combinedSources);
-    this.source = combinedSources;
+    this.__source = combinedSources;
     return this;
   }
 

@@ -13,6 +13,7 @@ const logger = Logger.create("@webscale/collection");
 export class Collection<T extends Filter> {
 
   public readonly children?: Array<Collection<any>> = [];
+  public readonly actions: Array<{ name: string, method?: string, func: (params: any) => Promise<any> }> = [];
 
   private eventStream: Subject<CollectionEvent<T>> = new Subject();
   private schemaValidator: Ajv.ValidateFunction;
@@ -68,9 +69,9 @@ export class Collection<T extends Filter> {
    * Watch local changes
    * @returns {Observable<CollectionEvent<T extends Search>>}
    */
-  public watch(eventType?: CollectionEventType): Observable<CollectionEvent<T>> {
-    if (eventType) {
-      return this.eventStream.pipe(filter(event => event.type === eventType));
+  public watch(...eventTypes: CollectionEventType[]): Observable<CollectionEvent<T>> {
+    if (eventTypes) {
+      return this.eventStream.pipe(filter(event => eventTypes.indexOf(event.type) > -1));
     }
     return this.eventStream;
   }
@@ -94,7 +95,7 @@ export class Collection<T extends Filter> {
       // Include child collections if requested
       let includePromises = includeCollections.map(collection => {
         let subQuery = {};
-        this.getIdFields().forEach(field => subQuery[field] = search.query[field]);
+        this.getIdFields().forEach(field => subQuery[field] = item[field]);
         return collection.getAll({ query: subQuery }, context).pipe(toArray()).toPromise()
           .then(result => {
             return { result, collection: collection.name };
@@ -220,6 +221,26 @@ export class Collection<T extends Filter> {
       }
     }
     return false;
+  }
+
+  /**
+   * Register a new action
+   * @param options
+   * @param func
+   */
+  public action(options: { name: string, method?: "GET" | "POST" | "PUT" | "DELETE" },
+                func: ((params: any) => Promise<any>)) {
+    this.actions.push({
+      name: options.name,
+      method: options.method,
+      func
+    });
+    Object.defineProperty(this, options.name, {
+      value: func,
+      writable: true,
+      enumerable: true,
+      configurable: true
+    });
   }
 
   /**

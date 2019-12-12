@@ -1,4 +1,4 @@
-import { BadRequestError, Logger } from "@webscale/core";
+import { BadRequestError, Logger, LogLevel } from "@webscale/core";
 import { Observable } from "rxjs";
 import { Collection } from "../collection";
 import { Filter, Ids } from "../models";
@@ -13,18 +13,28 @@ export abstract class KeyValueConnection<T> extends Connection<T> {
 
   public save(collection: Collection<T>, item: T): Promise<T> {
     let pathSegments = this.getItemPath(collection, item);
+    if (logger.shouldLog(LogLevel.DEBUG)) {
+      logger.debug(`save ${collection.name}>${pathSegments.join("/")}=${JSON.stringify(item)}`);
+    }
     return this.saveForPath(collection, pathSegments, item);
   }
 
-  public get(collection: Collection<T>, search: Ids): Promise<T | undefined> {
+  public async get(collection: Collection<T>, search: Ids): Promise<T | undefined> {
     let pathSegments = this.getItemPath(collection, search);
-    return this.getForPath(collection, pathSegments);
+    let item = await this.getForPath(collection, pathSegments);
+    if (logger.shouldLog(LogLevel.DEBUG)) {
+      logger.debug(`get ${collection.name}>${pathSegments.join("/")}=${JSON.stringify(item)}`);
+    }
+    return item;
   }
 
   public getAll(collection: Collection<T>, search: Ids): Observable<T> {
     let pathSegments = this.getCollectionPath(collection, search);
     return Observable.create(observer => {
       this.getKeys(collection, pathSegments).then(keys => {
+        if (!keys) {
+          return observer.complete();
+        }
         let index = 0;
         let next = () => {
           let key = keys[index++];
@@ -34,6 +44,9 @@ export abstract class KeyValueConnection<T> extends Connection<T> {
             let subPathSegments = [];
             subPathSegments.push(...pathSegments, key);
             this.getForPath(collection, subPathSegments).then(item => {
+              if (logger.shouldLog(LogLevel.DEBUG)) {
+                logger.debug(`getAll ${collection.name}>${subPathSegments.join("/")} (${index})=${JSON.stringify(item)}`);
+              }
               observer.next(item);
               next();
             }).catch(e => observer.error(e));
@@ -44,9 +57,13 @@ export abstract class KeyValueConnection<T> extends Connection<T> {
     });
   }
 
-  public delete(collection: Collection<T>, search: Ids): Promise<boolean> {
+  public async delete(collection: Collection<T>, search: Ids): Promise<boolean> {
     let pathSegments = this.getItemPath(collection, search);
-    return this.deleteForPath(collection, pathSegments);
+    let deleted = await this.deleteForPath(collection, pathSegments);
+    if (logger.shouldLog(LogLevel.DEBUG)) {
+      logger.debug(`delete ${collection.name}>${pathSegments.join("/")}=${deleted}`);
+    }
+    return deleted;
   }
 
   /**
