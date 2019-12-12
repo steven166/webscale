@@ -70,7 +70,8 @@ export function createExpressRoutes(express: Application, collectionFactory: Col
     }
 
     collection.actions.filter(action => action.method).forEach(action => {
-      express[action.method](itemPath + `/${action.name}`, async (req, res, next) => {
+      let method = action.method.toLowerCase();
+      express[method](itemPath + `/${action.name}`, async (req, res, next) => {
         let params: any = {};
         for (let key in req.params) {
           if (req.params[key]) {

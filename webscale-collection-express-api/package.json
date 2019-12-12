@@ -1,6 +1,6 @@
 {
   "name": "@webscale/collection-express-api",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "ExpressJS REST API for @webscale/collection framework",
   "main": "index.js",
   "author": "S. Hermans <s.hermans@maxxton.com>",
